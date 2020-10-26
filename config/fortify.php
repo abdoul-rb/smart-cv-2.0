@@ -73,7 +73,7 @@ return [
     | these middleware but typically this provided default is preferred.
     |
     */
-
+    'path' => 'auth/me',
     'middleware' => ['web'],
 
     /*
@@ -103,7 +103,7 @@ return [
     */
 
     'features' => [
-        Features::registration(),
+        //Features::registration(),
         Features::resetPasswords(),
         // Features::emailVerification(),
         Features::updateProfileInformation(),
