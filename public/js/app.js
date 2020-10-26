@@ -24820,7 +24820,7 @@ var staticRenderFns = [
           },
           [
             _c("h3", { staticClass: "my-1" }, [
-              _vm._v("Conception: API Laravel & Client Nuxt.JS")
+              _vm._v("Conception: Laravel 8 Jetstream Inertia")
             ]),
             _vm._v(" "),
             _c("h3", { staticClass: "my-1" }, [
@@ -28526,7 +28526,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Profile\n        ")]
+                [_vm._v("\n            Information du profil\n        ")]
               )
             ]
           },
