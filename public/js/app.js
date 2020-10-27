@@ -3742,8 +3742,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        email: 'abdoulrahim.bah@hotmail.com',
-        password: 'Abdoulrahim',
+        email: '',
+        password: '',
         remember: null
       }
     };
@@ -3765,7 +3765,6 @@ __webpack_require__.r(__webpack_exports__);
           return _this.sending = true;
         }
       });
-      console.log(this.form.email);
     }
   }
 });
@@ -27856,9 +27855,71 @@ var render = function() {
                 attrs: { type: "hidden", name: "remember", value: "true" }
               }),
               _vm._v(" "),
-              _vm._m(1),
+              _c("div", { staticClass: "rounded-md shadow-sm" }, [
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.email,
+                        expression: "form.email"
+                      }
+                    ],
+                    staticClass:
+                      "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5",
+                    attrs: {
+                      name: "email",
+                      type: "email",
+                      placeholder: "Email address",
+                      "aria-label": "Email address",
+                      required: ""
+                    },
+                    domProps: { value: _vm.form.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "email", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "-mt-px" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.password,
+                        expression: "form.password"
+                      }
+                    ],
+                    staticClass:
+                      "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5",
+                    attrs: {
+                      name: "password",
+                      type: "password",
+                      placeholder: "Password",
+                      "aria-label": "Password",
+                      required: ""
+                    },
+                    domProps: { value: _vm.form.password },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "password", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
               _vm._v(" "),
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "mt-6" }, [
                 _c(
@@ -27950,40 +28011,6 @@ var staticRenderFns = [
           )
         ]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rounded-md shadow-sm" }, [
-      _c("div", [
-        _c("input", {
-          staticClass:
-            "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5",
-          attrs: {
-            "aria-label": "Email address",
-            name: "email",
-            type: "email",
-            required: "",
-            placeholder: "Email address"
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "-mt-px" }, [
-        _c("input", {
-          staticClass:
-            "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5",
-          attrs: {
-            "aria-label": "Password",
-            name: "password",
-            type: "password",
-            required: "",
-            placeholder: "Password"
-          }
-        })
-      ])
     ])
   },
   function() {

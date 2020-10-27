@@ -73,10 +73,10 @@
                     <input type="hidden" name="remember" value="true">
                     <div class="rounded-md shadow-sm">
                         <div>
-                            <input aria-label="Email address" name="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address">
+                            <input name="email" type="email" v-model="form.email" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" aria-label="Email address" required />
                         </div>
                         <div class="-mt-px">
-                            <input aria-label="Password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password">
+                            <input name="password" type="password" v-model="form.password" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" aria-label="Password" required />
                         </div>
                     </div>
                     <div class="mt-6 flex items-center justify-between">
@@ -109,8 +109,8 @@
         data () {
             return {
                 form: {
-                    email: 'abdoulrahim.bah@hotmail.com',
-                    password: 'Abdoulrahim',
+                    email: '',
+                    password: '',
                     remember: null
                 }
             }
@@ -127,7 +127,6 @@
                     onStart: () => this.sending = true,
                     onFinish: () => this.sending = true,
                 })
-                console.log(this.form.email)
             },
         },
     };
