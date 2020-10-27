@@ -51,7 +51,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Fortify URL auth
 
 Pour personnaliser chemin de votre authentification lorsque vous utilisez *Fortify*
-Aller dans le fichier JetstreamServiceProvider.php et ajouter cette ligne :
+Aller dans le fichier de configuration **fortify.php** et ajouter cette ligne :
 Je la place au mieux au dessus la ligne définissant le middleware.
 ```php
 'path' => 'chemin_auth'

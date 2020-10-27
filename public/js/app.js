@@ -3742,11 +3742,31 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        email: '',
-        password: ''
-      },
-      validation: {}
+        email: 'abdoulrahim.bah@hotmail.com',
+        password: 'Abdoulrahim',
+        remember: null
+      }
     };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      var data = {
+        email: this.form.email,
+        password: this.form.password,
+        remember: this.form.remember
+      };
+      this.$inertia.post(this.route('login'), data, {
+        onStart: function onStart() {
+          return _this.sending = true;
+        },
+        onFinish: function onFinish() {
+          return _this.sending = true;
+        }
+      });
+      console.log(this.form.email);
+    }
   }
 });
 
@@ -3763,7 +3783,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Jetstream_Welcome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Welcome */ "./resources/js/Jetstream/Welcome.vue");
-//
 //
 //
 //
@@ -27824,7 +27843,7 @@ var render = function() {
             "form",
             {
               staticClass: "w-9/12 mt-8",
-              attrs: { action: "#", method: "POST" },
+              attrs: { id: "login" },
               on: {
                 submit: function($event) {
                   $event.preventDefault()
@@ -28042,7 +28061,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Dashboard\n        ")]
+                [_vm._v("\n            Dashboard personnal\n        ")]
               )
             ]
           },

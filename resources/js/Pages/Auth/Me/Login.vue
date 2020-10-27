@@ -69,7 +69,7 @@
                         <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">start your 14-day free trial</a>
                     </p>
                 </div>
-                <form class="w-9/12 mt-8" action="#" method="POST" @submit.prevent="submit">
+                <form class="w-9/12 mt-8" id="login" @submit.prevent="submit">
                     <input type="hidden" name="remember" value="true">
                     <div class="rounded-md shadow-sm">
                         <div>
@@ -109,11 +109,26 @@
         data () {
             return {
                 form: {
-                    email: '',
-                    password: ''
-                },
-                validation: {},
+                    email: 'abdoulrahim.bah@hotmail.com',
+                    password: 'Abdoulrahim',
+                    remember: null
+                }
             }
+        },
+        methods: {
+            submit () {
+                const data = {
+                    email: this.form.email,
+                    password: this.form.password,
+                    remember: this.form.remember
+                }
+
+                this.$inertia.post(this.route('login'), data, {
+                    onStart: () => this.sending = true,
+                    onFinish: () => this.sending = true,
+                })
+                console.log(this.form.email)
+            },
         },
     };
 </script>
