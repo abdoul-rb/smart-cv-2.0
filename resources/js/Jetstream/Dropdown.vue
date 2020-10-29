@@ -6,7 +6,6 @@
         <!-- Full Screen Dropdown Overlay -->
         <div v-show="open" class="fixed inset-0 z-40" @click="open = false">
         </div>
-
         <transition
             enter-active-class="transition ease-out duration-200"
             enter-class="transform opacity-0 scale-95"
@@ -40,20 +39,17 @@
                 default: () => ['py-1', 'bg-white']
             }
         },
-
         data() {
             return {
                 open: false
             }
         },
-
         created() {
             const closeOnEscape = (e) => {
                 if (this.open && e.keyCode === 27) {
                     this.open = false
                 }
             }
-
             this.$once('hook:destroyed', () => {
                 document.removeEventListener('keydown', closeOnEscape)
             })

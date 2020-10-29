@@ -1,7 +1,7 @@
 <template>
     <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Mon panel d'administration</h2>
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Projects</h2>
         </template>
         <div class="py-12">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -37,6 +37,7 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
+
     export default {
         components: {
             AppLayout,
