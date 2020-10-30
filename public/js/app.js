@@ -4851,6 +4851,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4858,77 +4871,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     Button: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_2__["default"],
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  props: ['skills'],
   data: function data() {
     return {
-      skills: [{
-        id: '1',
-        name: 'HTML',
-        category: 'Frontend'
-      }, {
-        id: '2',
-        name: 'CSS',
-        category: 'Frontend'
-      }, {
-        id: '3',
-        name: 'SCSS',
-        category: 'Frontend'
-      }, {
-        id: '4',
-        name: 'Javascript',
-        category: 'Frontend'
-      }, {
-        id: '5',
-        name: 'Tailwindcss',
-        category: 'Frontend'
-      }, {
-        id: '6',
-        name: 'PHP',
-        category: 'Backend'
-      }, {
-        id: '7',
-        name: 'Laravel',
-        category: 'Backend'
-      }, {
-        id: '8',
-        name: 'Ruby On Rails',
-        category: 'Backend'
-      }, {
-        id: '9',
-        name: 'Github',
-        category: 'Devops'
-      }, {
-        id: '10',
-        name: 'Gitlab',
-        category: 'Devops'
-      }, {
-        id: '11',
-        name: 'Docker',
-        category: 'Devops'
-      }, {
-        id: '12',
-        name: 'VS Code',
-        category: 'Tools'
-      }, {
-        id: '13',
-        name: 'PHPStorm',
-        category: 'Tools'
-      }, {
-        id: '14',
-        name: 'Figma',
-        category: 'Tools'
-      }, {
-        id: '15',
-        name: 'Trello',
-        category: 'Tools'
-      }, {
-        id: '16',
-        name: 'Photoshop',
-        category: 'Tools'
-      }],
       open: false,
+      skills: this.skills,
       form: {
-        name: '',
-        category: ''
+        name: null,
+        category: null,
+        notes: null
       },
       validation: {}
     };
@@ -4974,31 +4925,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
-                return _this2.skills.push(_this2.form);
+                _this2.$inertia.post('/dashboard/skills', _this2.form);
 
-              case 3:
-                _this2.$router.push({
-                  name: 'dashboard-admin-skills'
-                });
-
-                _context2.next = 9;
-                break;
-
-              case 6:
-                _context2.prev = 6;
-                _context2.t0 = _context2["catch"](0);
-                _this2.validation = _context2.t0.response.data.errors;
-
-              case 9:
+              case 1:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 6]]);
+        }, _callee2);
       }))();
-    }
+    },
+    resetForm: function resetForm() {}
+  },
+  mounted: function mounted() {
+    console.log(this.skills);
   }
 });
 
@@ -30688,6 +30628,52 @@ var render = function() {
     [
       _vm._v(" "),
       _c("div", { staticClass: "max-w-6xl mx-auto sm:px-6 lg:px-8 py-8" }, [
+        _vm.$page.flash.success
+          ? _c(
+              "div",
+              {
+                staticClass:
+                  "text-white px-6 py-4 border-0 rounded relative mb-4 bg-indigo-500"
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass:
+                      "stroke-current text-gray-200 w-5 h-auto inline-block mr-5 align-middle",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      width: "24",
+                      height: "24",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      "stroke-width": "2",
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round"
+                    }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        d: "M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+                      }
+                    }),
+                    _c("path", { attrs: { d: "M13.73 21a2 2 0 0 1-3.46 0" } })
+                  ]
+                ),
+                _vm._v(" "),
+                _c("span", { staticClass: "inline-block align-middle mr-8" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.$page.flash.success) +
+                      "\n            "
+                  )
+                ])
+              ]
+            )
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "section",
           { staticClass: "overflow-hidden sm:rounded-lg py-3 mb-3" },
@@ -30698,7 +30684,7 @@ var render = function() {
                 staticClass:
                   "grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mx-4 sm:mx-0"
               },
-              _vm._l(_vm.skills, function(item) {
+              _vm._l(this.skills, function(item) {
                 return _c(
                   "div",
                   {
@@ -30975,6 +30961,7 @@ var render = function() {
           _c(
             "form",
             {
+              ref: "formSkill",
               on: {
                 submit: function($event) {
                   $event.preventDefault()
@@ -30989,7 +30976,7 @@ var render = function() {
                 [
                   _c(
                     "div",
-                    { staticClass: "col-span-6 sm:col-span-6 lg:col-span-2" },
+                    { staticClass: "col-span-6 sm:col-span-6 lg:col-span-1" },
                     [
                       _c(
                         "label",
@@ -31039,7 +31026,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-span-6 sm:col-span-3 lg:col-span-2" },
+                    { staticClass: "col-span-6 sm:col-span-3 lg:col-span-1" },
                     [
                       _c(
                         "label",
@@ -31089,9 +31076,59 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
+                    { staticClass: "col-span-6 sm:col-span-3 lg:col-span-3" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass:
+                            "block text-sm font-semibold leading-5 text-gray-200",
+                          attrs: { for: "notes" }
+                        },
+                        [_vm._v("Notes")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.notes,
+                            expression: "form.notes"
+                          }
+                        ],
+                        staticClass:
+                          "mt-1 form-input block w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5",
+                        attrs: { id: "notes" },
+                        domProps: { value: _vm.form.notes },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "notes", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.validation.notes
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "font-medium text-xs text-red-700 uppercase mt-2"
+                            },
+                            [_vm._v(_vm._s(_vm.validation.notes[0]))]
+                          )
+                        : _vm._e()
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
                     {
                       staticClass:
-                        "col-span-6 sm:col-span-3 lg:col-span-2 items-center pt-6"
+                        "col-span-6 sm:col-span-3 lg:col-span-1 items-center pt-6"
                     },
                     [
                       _c(

@@ -10,7 +10,8 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     })->name('dashboard');
 
     Route::prefix('skills')->name('dashboard.skill.')->group(function () {
-        Route::get('/', 'App\Http\Controllers\Dashboard\SkillController@index')->name('index');
+        Route::get('', 'App\Http\Controllers\Dashboard\SkillController@index')->name('index');
+        Route::post('', 'App\Http\Controllers\Dashboard\SkillController@store')->name('store');
     });
 
     Route::prefix('achieves')->name('dashboard.achieve.')->group(function () {

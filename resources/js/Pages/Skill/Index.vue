@@ -4,9 +4,17 @@
             <h2 class="font-semibold text-xl text-gray-200 leading-tight">Skills</h2>
         </template>
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 py-8">
+            <div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-indigo-500" v-if="$page.flash.success">
+                <svg class="stroke-current text-gray-200 w-5 h-auto inline-block mr-5 align-middle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <span class="inline-block align-middle mr-8">
+                    {{ $page.flash.success }}
+                </span>
+            </div>
             <section class="overflow-hidden sm:rounded-lg py-3 mb-3">
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mx-4 sm:mx-0">
-                    <div class="bg-b-dashboard rounded-md flex" v-for="item in skills" v-bind:key="item.id">
+                    <div class="bg-b-dashboard rounded-md flex" v-for="item in this.skills" v-bind:key="item.id">
                         <div class="hidden sm:block bg-blue-900 flex items-center justify-center rounded-l-md px-6 py-5">
                             <div class="text-white text-md font-semibold uppercase">{{ item.name[0] }}</div>
                         </div>
@@ -55,19 +63,24 @@
             </section>
             <aside class="my-6">
                 <h2 class="font-semibold text-xl text-gray-400 leading-tight">Add new Skill</h2>
-                <form class="" @submit.prevent="submit">
+                <form class="" @submit.prevent="submit" ref="formSkill">
                     <div class="grid grid-cols-6 gap-6 items-center py-3">
-                        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                        <div class="col-span-6 sm:col-span-6 lg:col-span-1">
                             <label for="title" class="block text-sm font-semibold leading-5 text-gray-200">The Skill</label>
                             <input id="title" class="mt-1 form-input block w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="form.name">
                             <div class="font-medium text-xs text-red-700 uppercase mt-2" v-if="validation.name">{{ validation.name[0] }}</div>
                         </div>
-                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-1">
                             <label for="category" class="block text-sm font-semibold leading-5 text-gray-200">Class</label>
                             <input id="category" class="mt-1 form-input block w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="form.category">
                             <div class="font-medium text-xs text-red-700 uppercase mt-2" v-if="validation.category">{{ validation.category[0] }}</div>
                         </div>
-                        <div class="col-span-6 sm:col-span-3 lg:col-span-2 items-center pt-6">
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-3">
+                            <label for="notes" class="block text-sm font-semibold leading-5 text-gray-200">Notes</label>
+                            <input id="notes" class="mt-1 form-input block w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="form.notes">
+                            <div class="font-medium text-xs text-red-700 uppercase mt-2" v-if="validation.notes">{{ validation.notes[0] }}</div>
+                        </div>
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-1 items-center pt-6">
                             <button type="submit" class="flex items-center outline-none bg-blue-900 p-1 lg:p-2 rounded-full">
                                 <svg class="fill-current text-white h-6 w-6"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"/>
@@ -89,30 +102,15 @@
             Button,
             AppLayout,
         },
+        props: ['skills'],
         data() {
             return {
-                skills: [
-                    { id : '1', name: 'HTML', category: 'Frontend' },
-                    { id : '2', name: 'CSS', category: 'Frontend' },
-                    { id : '3', name: 'SCSS', category: 'Frontend' },
-                    { id : '4', name: 'Javascript', category: 'Frontend' },
-                    { id : '5', name: 'Tailwindcss', category: 'Frontend' },
-                    { id : '6', name: 'PHP', category: 'Backend' },
-                    { id : '7', name: 'Laravel', category: 'Backend' },
-                    { id : '8', name: 'Ruby On Rails', category: 'Backend' },
-                    { id : '9', name: 'Github', category: 'Devops' },
-                    { id : '10', name: 'Gitlab', category: 'Devops' },
-                    { id : '11', name: 'Docker', category: 'Devops' },
-                    { id : '12', name: 'VS Code', category: 'Tools' },
-                    { id : '13', name: 'PHPStorm', category: 'Tools' },
-                    { id : '14', name: 'Figma', category: 'Tools' },
-                    { id : '15', name: 'Trello', category: 'Tools' },
-                    { id : '16', name: 'Photoshop', category: 'Tools' }
-                ],
                 open: false,
+                skills: this.skills,
                 form : {
-                    name : '',
-                    category : ''
+                    name: null,
+                    category: null,
+                    notes: null
                 },
                 validation : {}
             }
@@ -129,13 +127,14 @@
                 }
             },
             async submit () {
-                try {
-                    await this.skills.push(this.form)
-                    this.$router.push({ name : 'dashboard-admin-skills' })
-                } catch (e) {
-                    this.validation = e.response.data.errors
-                }
+                this.$inertia.post('/dashboard/skills', this.form)
+            },
+            resetForm () {
+
             }
+        },
+        mounted() {
+            console.log(this.skills)
         }
     }
 </script>
