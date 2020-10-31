@@ -1,7 +1,7 @@
 <template>
     <jet-form-section @submitted="updateProfileInformation">
         <template #title>
-            Profile Information
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Profile Information</h2>
         </template>
 
         <template #description>
@@ -12,12 +12,8 @@
             <!-- Profile Photo -->
             <div class="col-span-6 sm:col-span-4" v-if="$page.jetstream.managesProfilePhotos">
                 <!-- Profile Photo File Input -->
-                <input type="file" class="hidden"
-                            ref="photo"
-                            @change="updatePhotoPreview">
-
+                <input type="file" class="hidden" ref="photo" @change="updatePhotoPreview">
                 <jet-label for="photo" value="Photo" />
-
                 <!-- Current Profile Photo -->
                 <div class="mt-2" v-show="! photoPreview">
                     <img :src="user.profile_photo_url" alt="Current Profile Photo" class="rounded-full h-20 w-20 object-cover">

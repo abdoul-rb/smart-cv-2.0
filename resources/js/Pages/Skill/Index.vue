@@ -8,20 +8,18 @@
                 <svg class="stroke-current text-gray-200 w-5 h-auto inline-block mr-5 align-middle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                 </svg>
-                <span class="inline-block align-middle mr-8">
-                    {{ $page.flash.success }}
-                </span>
+                <span class="inline-block align-middle mr-8">{{ $page.flash.success }}</span>
             </div>
             <section class="overflow-hidden sm:rounded-lg py-3 mb-3">
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mx-4 sm:mx-0">
-                    <div class="bg-b-dashboard rounded-md flex" v-for="item in this.skills" v-bind:key="item.id">
+                    <div class="bg-b-dashboard rounded-md flex" v-for="skill in this.skills" v-bind:key="skill.id">
                         <div class="hidden sm:block bg-blue-900 flex items-center justify-center rounded-l-md px-6 py-5">
-                            <div class="text-white text-md font-semibold uppercase">{{ item.name[0] }}</div>
+                            <div class="text-white text-md font-semibold uppercase">{{ skill.name[0] }}</div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 items-center rounded-l-sm leading-none pr-6">
                             <div class="sm:col-span-4 leading-snug px-6 py-3 sm:px-3 sm:py-0">
-                                <div class="text-white w-full text-sm font-semibold">{{ item.name }}</div>
-                                <div class="hidden sm:block text-gray-400 text-sm font-semibold">{{ item.category }}</div>
+                                <div class="text-white w-full text-sm font-semibold">{{ skill.name }}</div>
+                                <div class="hidden sm:block text-gray-400 text-sm font-semibold">{{ skill.category }}</div>
                             </div>
                             <div class="hidden sm:block sm:col-span-1 p-2">
                                 <div class="relative">
@@ -51,7 +49,7 @@
                                                 <div class="border-t border-gray-100"></div>
                                                 <inertia-link href="#" class="block px-4 py-1 text-xs font-semibold leading-tight text-gray-900 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Show</inertia-link>
                                                 <div class="border-t border-gray-100"></div>
-                                                <inertia-link href="#" @click="deleteSkill(item)" type="button" class="block px-4 py-1 text-xs font-semibold leading-tight text-gray-900 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Delete</inertia-link>
+                                                <inertia-link href="#" @click="deleteSkill(skill)" type="button" class="block px-4 py-1 text-xs font-semibold leading-tight text-gray-900 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Delete</inertia-link>
                                             </div>
                                         </div>
                                     </transition>
@@ -66,8 +64,8 @@
                 <form class="" @submit.prevent="submit" ref="formSkill">
                     <div class="grid grid-cols-6 gap-6 items-center py-3">
                         <div class="col-span-6 sm:col-span-6 lg:col-span-1">
-                            <label for="title" class="block text-sm font-semibold leading-5 text-gray-200">The Skill</label>
-                            <input id="title" class="mt-1 form-input block w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="form.name">
+                            <label for="name" class="block text-sm font-semibold leading-5 text-gray-200">The Skill</label>
+                            <input id="name" class="mt-1 form-input block w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" v-model="form.name">
                             <div class="font-medium text-xs text-red-700 uppercase mt-2" v-if="validation.name">{{ validation.name[0] }}</div>
                         </div>
                         <div class="col-span-6 sm:col-span-3 lg:col-span-1">
@@ -98,15 +96,11 @@
     import AppLayout from '@/Layouts/AppLayout'
     import Button from "@/Jetstream/Button";
     export default {
-        components: {
-            Button,
-            AppLayout,
-        },
+        components: { Button, AppLayout, },
         props: ['skills'],
         data() {
             return {
                 open: false,
-                skills: this.skills,
                 form : {
                     name: null,
                     category: null,
@@ -129,12 +123,7 @@
             async submit () {
                 this.$inertia.post('/dashboard/skills', this.form)
             },
-            resetForm () {
-
-            }
         },
-        mounted() {
-            console.log(this.skills)
-        }
+        mounted() {}
     }
 </script>

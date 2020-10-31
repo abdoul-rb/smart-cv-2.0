@@ -10,15 +10,15 @@
                         <div class="grid sm:grid-cols-3 gap-8">
                             <div class="bg-b-dashboard rounded-lg px-8 py-6 h-32">
                                 <h4 class="text-gray-600 text-md font-bold tracking-widest">Skills</h4>
-                                <h5 class="text-white text-5xl font-bold tracking-wider">72</h5>
+                                <h5 class="text-white text-5xl font-bold tracking-wider">{{ this.nb_skills }}</h5>
                             </div>
                             <div class="bg-b-dashboard rounded-lg px-8 py-6 h-32">
                                 <h4 class="text-gray-600 text-md font-bold tracking-widest">Projects</h4>
-                                <h5 class="text-white text-5xl font-bold tracking-wider">9</h5>
+                                <h5 class="text-white text-5xl font-bold tracking-wider">{{ this.nb_projects }}</h5>
                             </div>
                             <div class="bg-b-dashboard rounded-lg px-8 py-6 h-32">
-                                <h4 class="text-gray-600 text-md font-bold tracking-widest">Visits</h4>
-                                <h5 class="text-white text-5xl font-bold tracking-wider">132</h5>
+                                <h4 class="text-gray-600 text-md font-bold tracking-widest">Total</h4>
+                                <h5 class="text-white text-5xl font-bold tracking-wider">{{ this.nb_skills + this.nb_projects }}</h5>
                             </div>
                         </div>
                         <div class="grid sm:grid-cols-3 gap-8 mt-8">
@@ -38,8 +38,12 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     export default {
-        components: {
-            AppLayout,
+        components: { AppLayout },
+        props: ['nb_skills', 'nb_projects'],
+        data () {
+            return {
+
+            }
         },
     }
 </script>

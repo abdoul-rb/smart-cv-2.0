@@ -27,10 +27,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
         Inertia::share('flash', function () {
             return [
                 'success' => Session::get('success'),
             ];
         });
+
+        Inertia::share([
+            'errors' => function () {
+                return Session::get('errors')
+                    ? Session::get('errors')->getBag('default')->getMessages()
+                    : (object)[];
+            },
+        ]);
     }
 }

@@ -30,4 +30,9 @@ class Achieve extends Model
             $achieve->slug = Str::slug($achieve->name);
         });
     }
+
+    public function stacks()
+    {
+        return $this->hasMany(Stack::class);
+    }
 }

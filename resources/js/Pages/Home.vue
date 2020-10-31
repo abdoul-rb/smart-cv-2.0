@@ -4,14 +4,11 @@
         <header class="relative flex min-h-screen px-4 lg:px-24 py-0 md:py-10"  id="about">
             <div class="w-full lg:w-11/12 my-8">
                 <p class="text-lg text-teal-400 font-medium tracking-widest">Hello, je m'appelle</p>
-                <p class="font-baloo text-xl md:text-4xl lg:text-6xl text-gray-200 font-semibold tracking-wider">Abdoul Rahim Bah.</p>
-                <p class="font-baloo text-xl md:text-4xl lg:text-5xl text-gray-400 md:font-semibold tracking-wide">Je suis {{ poste }}</p>
-                <p class="max-w-xl text-lg text-gray-400 font-base my-6">{{ aboutme }}</p>
-                <div class="lg:my-12 text-center md:text-left">
-                    <a href="#contact" class="font-rubik text-md lg:text-xs text-teal-400 font-medium tracking-wider uppercase rounded-full md:rounded-lg border border-teal-400 px-24 lg:px-10 py-4">Me contacter</a>
-                </div>
-                <div class="block lg:hidden my-16 text-center md:text-left font-rubik">
-                    <inertia-link href="links.cv_link" target="_blank" ref="nofollow noopener noreferrer" title="Téléchargez mon CV" class="rounded-full md:rounded-lg border border-teal-200 py-4 lg:py-3 px-24 lg:px-10 text-md lg:text-xs tracking-wider uppercase">Mon cv</inertia-link>
+                <p class="font-baloo text-3xl md:text-4xl lg:text-6xl text-gray-200 font-semibold tracking-wider">Abdoul Rahim Bah.</p>
+                <p class="font-baloo text-2xl leading-7 font-medium md:text-4xl lg:text-5xl text-gray-400 md:font-semibold tracking-wide">Je suis {{ poste }}</p>
+                <p class="max-w-xl text-lg text-gray-400 font-base my-12 sm:my-6">{{ aboutme }}</p>
+                <div class="my-16 sm:my-12 text-center md:text-left">
+                    <a href="#contact" class="font-rubik text-md lg:text-xs text-teal-400 font-medium tracking-wider uppercase rounded-md md:rounded-lg border border-teal-400 px-24 lg:px-10 py-4">Me contacter</a>
                 </div>
             </div>
             <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
@@ -38,7 +35,7 @@
                     </span>
                     <div>Compétences</div>
                 </h2>
-                <div class="grid grid-cols-2 lg:grid-cols-3 lg:gap-12 py-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-12 mx-2 py-4">
                     <div class="">
                         <h2 class="inline-flex items-center mb-0">
                             <span class="block text-5xl text-gray-800 opacity-50">01.</span>
@@ -86,7 +83,7 @@
                     </div>
                 </div>
             </section>
-            <section class="my-32" id="achieve">
+            <section class="my-24 lg:my-32" id="achieve">
                 <h2 class="inline-flex items-baseline text-3xl font-medium uppercase text-gray-300 tracking-wide" v-if="projects.length > 0">
                     <span class="inline-flex text-sm text-teal-400">
                         <svg class="stroke-current text-teal-400 h-4 w-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -97,7 +94,7 @@
                     <div>Projets</div>
                 </h2>
                 <div class="grid grid-cols-6 lg:grid-cols-12 gap-16 row-gap-12 py-10">
-                    <Project v-for="project in projects" :key="project.id" :project="project" />
+                    <Project v-for="project in achieves" :key="project.id" :project="project" />
                 </div>
             </section>
             <section class="text-center" id="contact">
@@ -115,7 +112,7 @@
                     Bien que je ne sois pas à la recherche de nouvelles opportunités en ce moment, je reste ouvert pour discuter.
                     Que vous ayez une question ou autre chose, je me ferais une joie de vous répondre.
                 </p>
-                <div class="max-w-2xl mx-auto inline-flex items-center">
+                <div class="max-w-2xl mx-auto inline-flex items-center mb-12 sm:mb-0">
                     <inertia-link href="#" class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 px-3 py-1 mx-2" title="Github">
                         <svg class="stroke-current text-teal-400 w-5 h-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -138,7 +135,7 @@
                     </inertia-link>
                 </div>
                 <div class="lg:my-12">
-                    <a href="#contact" class="font-rubik text-md lg:text-sm text-teal-400 transition duration-500 ease-in-out hover:bg-teal-500 hover:text-white font-medium tracking-wider rounded-full md:rounded-lg border border-teal-400 px-24 lg:px-10 py-4">Say Hello.</a>
+                    <a href="#contact" class="font-rubik text-md lg:text-sm text-teal-400 transition duration-500 ease-in-out hover:bg-teal-500 hover:text-white font-medium tracking-wider rounded-md md:rounded-lg border border-teal-400 px-24 lg:px-10 py-4">Say Hello.</a>
                 </div>
             </section>
             <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
@@ -163,37 +160,11 @@
     import theNav from "@/Jetstream/Home/theNav";
     import Project from "@/Jetstream/Home/Project";
     import Contact from "@/Jetstream/Home/Contact";
-
     export default {
         components: { theFooter, theNav, Project, Contact },
+        props: ['skills', 'achieves'],
         data () {
             return {
-                skills: [
-                    { name: 'HTML', category: 'Frontend' },
-                    { name: 'CSS', category: 'Frontend' },
-                    { name: 'SCSS', category: 'Frontend' },
-                    { name: 'Javascript', category: 'Frontend' },
-                    { name: 'Tailwindcss', category: 'Frontend' },
-                    { name: 'Bootstrap', category: 'Frontend' },
-                    { name: 'Vue.JS', category: 'Frontend' },
-                    { name: 'Nuxt.JS', category: 'Frontend' },
-                    { name: 'PHP', category: 'Backend' },
-                    { name: 'Laravel', category: 'Backend' },
-                    { name: 'Symfony', category: 'Backend' },
-                    { name: 'Ruby On Rails', category: 'Backend' },
-                    { name: 'Github', category: 'Devops' },
-                    { name: 'Gitlab', category: 'Devops' },
-                    { name: 'Docker', category: 'Devops' },
-                    { name: 'Digital Ocean', category: 'Devops' },
-                    { name: 'Laravel Forge', category: 'Devops' },
-                    { name: 'Heroku', category: 'Devops' },
-                    { name: 'CI/CD', category: 'Devops' },
-                    { name: 'Visual Studio Code', category: 'Tools' },
-                    { name: 'PHPStorm', category: 'Tools' },
-                    { name: 'Figma', category: 'Tools' },
-                    { name: 'Trello', category: 'Tools' },
-                    { name: 'Photoshop', category: 'Tools' }
-                ],
                 projects : [
                     { name : 'Ahrello', description : 'Plateforme de mise en relation entre porteurs de projet et profil digitaux.', skills : ['Laravel', 'PHP', 'Tailwindcss', 'Vue.JS', 'Nuxt.JS'], url: 'https://www.ahrello.com/', git: 'https://github.com/Cheick-ahmed/ahrello.com', image: "megan-sanford-g_ssp9teiSA-unsplash.jpg" },
                     { name : 'Blogify', description : 'Réalisation d\'un CMS from scratch en PHP, permettant de gérer des articles de blog.', skills : ['PHP', 'HTML', 'CSS | SCSS', 'JavaScript', 'Docker'], url: 'https://cms-blog.online', git: 'https://gitlab.com/Come-Wasik/esgi-projet-annuel', image: 'ahrello.png' },

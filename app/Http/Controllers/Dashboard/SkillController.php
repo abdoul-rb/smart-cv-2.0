@@ -20,9 +20,7 @@ class SkillController extends Controller
     public function index()
     {
         $skills = Skill::all();
-        return Inertia::render('Skill/Index', [
-            'skills' => $skills
-        ]);
+        return Inertia::render('Skill/Index', compact('skills'));
     }
 
     /**
