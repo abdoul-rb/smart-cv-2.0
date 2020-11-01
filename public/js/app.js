@@ -2652,12 +2652,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       isOpen: false
     };
-  },
-  props: {
-    cv_link: {
-      required: false,
-      type: String
-    }
   }
 });
 
@@ -4267,22 +4261,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -4424,13 +4402,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_ConfirmsPassword__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ConfirmsPassword */ "./resources/js/Jetstream/ConfirmsPassword.vue");
 /* harmony import */ var _Jetstream_DangerButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/DangerButton */ "./resources/js/Jetstream/DangerButton.vue");
 /* harmony import */ var _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/SecondaryButton */ "./resources/js/Jetstream/SecondaryButton.vue");
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4701,16 +4672,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Jetstream_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/Label */ "./resources/js/Jetstream/Label.vue");
 /* harmony import */ var _Jetstream_ActionMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/ActionMessage */ "./resources/js/Jetstream/ActionMessage.vue");
 /* harmony import */ var _Jetstream_SecondaryButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/SecondaryButton */ "./resources/js/Jetstream/SecondaryButton.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -25666,7 +25627,21 @@ var render = function() {
         [_vm._v(_vm._s(_vm.project.description))]
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "div",
+        { staticClass: "mt-3" },
+        _vm._l(_vm.project.stacks, function(stack) {
+          return _c(
+            "span",
+            {
+              staticClass:
+                "text-sm font-normal leading-4 text-gray-200 px-2 py-1 mr-2 mt-2"
+            },
+            [_vm._v(_vm._s(stack.name))]
+          )
+        }),
+        0
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "my-2 text-left" }, [
@@ -25751,23 +25726,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-3" }, [
-      _c(
-        "span",
-        {
-          staticClass:
-            "text-sm font-normal leading-4 text-gray-200 px-2 py-1 mr-2 mt-2"
-        },
-        [_vm._v("Laravel")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -25977,13 +25936,13 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
-              "inertia-link",
+              "a",
               {
                 ref: "nofollow noopener noreferrer",
                 staticClass:
                   "text-teal-400 text-xs font-medium uppercase rounded-lg border border-teal-400 transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-95 py-2 px-6 ml-2",
                 attrs: {
-                  href: _vm.cv_link,
+                  href: "abdoulrahim_bah-^-web_developer.pdf",
                   target: "_blank",
                   title: "Téléchargez mon CV"
                 }
@@ -26778,7 +26737,12 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("main", [_vm._t("default")], 2)
+    _c(
+      "main",
+      { staticClass: "max-w-6xl mx-auto py-6 " },
+      [_vm._t("default")],
+      2
+    )
   ])
 }
 var staticRenderFns = []
@@ -29273,7 +29237,7 @@ var render = function() {
     "main",
     { staticClass: "root font-rubik overflow-x-hidden" },
     [
-      _c("the-nav", { attrs: { cv_link: _vm.links.cv_link } }),
+      _c("the-nav", {}),
       _vm._v(" "),
       _c(
         "header",
@@ -29304,17 +29268,14 @@ var render = function() {
               "p",
               {
                 staticClass:
-                  "font-baloo text-2xl leading-7 font-medium md:text-4xl lg:text-5xl text-gray-400 md:font-semibold tracking-wide"
+                  "font-baloo text-2xl leading-7 font-medium md:text-4xl lg:text-5xl text-gray-400 md:font-semibold tracking-wide my-12 sm:my-4"
               },
               [_vm._v("Je suis " + _vm._s(_vm.poste))]
             ),
             _vm._v(" "),
             _c(
               "p",
-              {
-                staticClass:
-                  "max-w-xl text-lg text-gray-400 font-base my-12 sm:my-6"
-              },
+              { staticClass: "max-w-xl text-lg text-gray-400 font-base my-10" },
               [_vm._v(_vm._s(_vm.aboutme))]
             ),
             _vm._v(" "),
@@ -30062,7 +30023,15 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Delete Account\n    ")]
+          return [
+            _c(
+              "h2",
+              {
+                staticClass: "font-semibold text-xl text-gray-200 leading-tight"
+              },
+              [_vm._v("Delete Account")]
+            )
+          ]
         },
         proxy: true
       },
@@ -30252,7 +30221,15 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Browser Sessions\n    ")]
+          return [
+            _c(
+              "h2",
+              {
+                staticClass: "font-semibold text-xl text-gray-200 leading-tight"
+              },
+              [_vm._v("Browser Sessions")]
+            )
+          ]
         },
         proxy: true
       },
@@ -30344,11 +30321,9 @@ var render = function() {
                       _c("div", { staticClass: "ml-3" }, [
                         _c("div", { staticClass: "text-sm text-gray-600" }, [
                           _vm._v(
-                            "\n                        " +
-                              _vm._s(session.agent.platform) +
+                            _vm._s(session.agent.platform) +
                               " - " +
-                              _vm._s(session.agent.browser) +
-                              "\n                    "
+                              _vm._s(session.agent.browser)
                           )
                         ]),
                         _vm._v(" "),
@@ -30357,7 +30332,7 @@ var render = function() {
                             _vm._v(
                               "\n                            " +
                                 _vm._s(session.ip_address) +
-                                ",\n\n                            "
+                                ",\n                            "
                             ),
                             session.is_current_device
                               ? _c(
@@ -30394,11 +30369,7 @@ var render = function() {
                       }
                     }
                   },
-                  [
-                    _vm._v(
-                      "\n                Logout Other Browser Sessions\n            "
-                    )
-                  ]
+                  [_vm._v("Logout Other Browser Sessions")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -30407,7 +30378,7 @@ var render = function() {
                     staticClass: "ml-3",
                     attrs: { on: _vm.form.recentlySuccessful }
                   },
-                  [_vm._v("\n                Done.\n            ")]
+                  [_vm._v("Done.")]
                 )
               ],
               1
@@ -30424,11 +30395,7 @@ var render = function() {
                 {
                   key: "title",
                   fn: function() {
-                    return [
-                      _vm._v(
-                        "\n                Logout Other Browser Sessions\n            "
-                      )
-                    ]
+                    return [_vm._v("Logout Other Browser Sessions")]
                   },
                   proxy: true
                 },
@@ -30437,7 +30404,7 @@ var render = function() {
                   fn: function() {
                     return [
                       _vm._v(
-                        "\n                Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.\n\n                "
+                        "\n                Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.\n                "
                       ),
                       _c(
                         "div",
@@ -30500,11 +30467,7 @@ var render = function() {
                             }
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                    Nevermind\n                "
-                          )
-                        ]
+                        [_vm._v("Nevermind")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -30572,7 +30535,7 @@ var render = function() {
                 "h2",
                 {
                   staticClass:
-                    "font-semibold text-xl text-gray-800 leading-tight"
+                    "font-semibold text-xl text-gray-200 leading-tight"
                 },
                 [_vm._v("\n            Information du profil\n        ")]
               )
@@ -30655,7 +30618,15 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Two Factor Authentication\n    ")]
+          return [
+            _c(
+              "h2",
+              {
+                staticClass: "font-semibold text-xl text-gray-200 leading-tight"
+              },
+              [_vm._v("Two Factor Authentication")]
+            )
+          ]
         },
         proxy: true
       },
@@ -30676,20 +30647,16 @@ var render = function() {
           return [
             _vm.twoFactorEnabled
               ? _c("h3", { staticClass: "text-lg font-medium text-gray-900" }, [
-                  _vm._v(
-                    "\n            You have enabled two factor authentication.\n        "
-                  )
+                  _vm._v("You have enabled two factor authentication.")
                 ])
               : _c("h3", { staticClass: "text-lg font-medium text-gray-900" }, [
-                  _vm._v(
-                    "\n            You have not enabled two factor authentication.\n        "
-                  )
+                  _vm._v("You have not enabled two factor authentication.")
                 ]),
             _vm._v(" "),
             _c("div", { staticClass: "mt-3 max-w-xl text-sm text-gray-600" }, [
               _c("p", [
                 _vm._v(
-                  "\n                When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.\n            "
+                  "When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application."
                 )
               ])
             ]),
@@ -30887,7 +30854,15 @@ var render = function() {
       {
         key: "title",
         fn: function() {
-          return [_vm._v("\n        Update Password\n    ")]
+          return [
+            _c(
+              "h2",
+              {
+                staticClass: "font-semibold text-xl text-gray-200 leading-tight"
+              },
+              [_vm._v("Update Password")]
+            )
+          ]
         },
         proxy: true
       },
@@ -31071,7 +31046,7 @@ var render = function() {
               {
                 staticClass: "font-semibold text-xl text-gray-200 leading-tight"
               },
-              [_vm._v("Profile Information")]
+              [_vm._v("Profile")]
             )
           ]
         },
@@ -31270,7 +31245,7 @@ var render = function() {
                 staticClass: "mr-3",
                 attrs: { on: _vm.form.recentlySuccessful }
               },
-              [_vm._v("\n            Saved.\n        ")]
+              [_vm._v("Saved.")]
             ),
             _vm._v(" "),
             _c(
@@ -31279,7 +31254,7 @@ var render = function() {
                 class: { "opacity-25": _vm.form.processing },
                 attrs: { disabled: _vm.form.processing }
               },
-              [_vm._v("\n            Save\n        ")]
+              [_vm._v("Save")]
             )
           ]
         },

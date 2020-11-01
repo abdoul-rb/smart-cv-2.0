@@ -1,12 +1,12 @@
 <template>
     <main class="root font-rubik overflow-x-hidden">
-        <the-nav class="" :cv_link="links.cv_link" />
+        <the-nav class="" />
         <header class="relative flex min-h-screen px-4 lg:px-24 py-0 md:py-10"  id="about">
             <div class="w-full lg:w-11/12 my-8">
                 <p class="text-lg text-teal-400 font-medium tracking-widest">Hello, je m'appelle</p>
                 <p class="font-baloo text-3xl md:text-4xl lg:text-6xl text-gray-200 font-semibold tracking-wider">Abdoul Rahim Bah.</p>
-                <p class="font-baloo text-2xl leading-7 font-medium md:text-4xl lg:text-5xl text-gray-400 md:font-semibold tracking-wide">Je suis {{ poste }}</p>
-                <p class="max-w-xl text-lg text-gray-400 font-base my-12 sm:my-6">{{ aboutme }}</p>
+                <p class="font-baloo text-2xl leading-7 font-medium md:text-4xl lg:text-5xl text-gray-400 md:font-semibold tracking-wide my-12 sm:my-4">Je suis {{ poste }}</p>
+                <p class="max-w-xl text-lg text-gray-400 font-base my-10">{{ aboutme }}</p>
                 <div class="my-16 sm:my-12 text-center md:text-left">
                     <a href="#contact" class="font-rubik text-md lg:text-xs text-teal-400 font-medium tracking-wider uppercase rounded-md md:rounded-lg border border-teal-400 px-24 lg:px-10 py-4">Me contacter</a>
                 </div>

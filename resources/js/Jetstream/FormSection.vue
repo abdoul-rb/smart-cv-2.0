@@ -30,7 +30,6 @@
         components: {
             JetSectionTitle,
         },
-
         computed: {
             hasActions() {
                 return !! this.$slots.actions

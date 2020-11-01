@@ -1,7 +1,7 @@
 <template>
     <jet-action-section>
         <template #title>
-            Delete Account
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Delete Account</h2>
         </template>
 
         <template #description>

@@ -92,7 +92,7 @@
             </div>
         </header>
         <!-- Page Content -->
-        <main>
+        <main class="max-w-6xl mx-auto py-6 ">
             <slot></slot>
         </main>
     </div>

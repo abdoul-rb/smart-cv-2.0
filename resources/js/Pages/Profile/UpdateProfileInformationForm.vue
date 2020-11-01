@@ -1,13 +1,11 @@
 <template>
     <jet-form-section @submitted="updateProfileInformation">
         <template #title>
-            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Profile Information</h2>
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Profile</h2>
         </template>
-
         <template #description>
             Update your account's profile information and email address.
         </template>
-
         <template #form>
             <!-- Profile Photo -->
             <div class="col-span-6 sm:col-span-4" v-if="$page.jetstream.managesProfilePhotos">
@@ -25,15 +23,12 @@
                           :style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'">
                     </span>
                 </div>
-
                 <jet-secondary-button class="mt-2 mr-2" type="button" @click.native.prevent="selectNewPhoto">
                     Select A New Photo
                 </jet-secondary-button>
-
                 <jet-secondary-button type="button" class="mt-2" @click.native.prevent="deletePhoto" v-if="user.profile_photo_path">
                     Remove Photo
                 </jet-secondary-button>
-
                 <jet-input-error :message="form.error('photo')" class="mt-2" />
             </div>
 
@@ -53,13 +48,8 @@
         </template>
 
         <template #actions>
-            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
-                Saved.
-            </jet-action-message>
-
-            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Save
-            </jet-button>
+            <jet-action-message :on="form.recentlySuccessful" class="mr-3">Saved.</jet-action-message>
+            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Save</jet-button>
         </template>
     </jet-form-section>
 </template>
@@ -83,9 +73,7 @@
             JetLabel,
             JetSecondaryButton,
         },
-
         props: ['user'],
-
         data() {
             return {
                 form: this.$inertia.form({
@@ -101,7 +89,6 @@
                 photoPreview: null,
             }
         },
-
         methods: {
             updateProfileInformation() {
                 if (this.$refs.photo) {
@@ -112,21 +99,16 @@
                     preserveScroll: true
                 });
             },
-
             selectNewPhoto() {
                 this.$refs.photo.click();
             },
-
             updatePhotoPreview() {
                 const reader = new FileReader();
-
                 reader.onload = (e) => {
                     this.photoPreview = e.target.result;
                 };
-
                 reader.readAsDataURL(this.$refs.photo.files[0]);
             },
-
             deletePhoto() {
                 this.$inertia.delete(route('current-user-photo.destroy'), {
                     preserveScroll: true,

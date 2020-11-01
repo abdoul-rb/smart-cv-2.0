@@ -23,7 +23,7 @@
                 <inertia-link href="#skills" class="text-gray-400 text-sm font-semibold uppercase block lg:inline-block hover:text-white px-4 py-3">Compétences</inertia-link>
                 <inertia-link href="#achieve" class="text-gray-400 text-sm font-semibold uppercase block lg:inline-block hover:text-white px-4 py-3">Réalisations</inertia-link>
                 <inertia-link href="#contact" class="text-gray-400 text-sm font-semibold uppercase block lg:inline-block hover:text-white px-4 py-3">Contact</inertia-link>
-                <inertia-link :href="cv_link" class="text-teal-400 text-xs font-medium uppercase rounded-lg border border-teal-400 transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-95 py-2 px-6 ml-2" target="_blank" ref="nofollow noopener noreferrer" title="Téléchargez mon CV">Mon CV</inertia-link>
+                <a href="abdoulrahim_bah-^-web_developer.pdf" class="text-teal-400 text-xs font-medium uppercase rounded-lg border border-teal-400 transition duration-500 ease-in-out transform hover:-translate-x-1 hover:scale-95 py-2 px-6 ml-2" target="_blank" ref="nofollow noopener noreferrer" title="Téléchargez mon CV">Mon CV</a>
             </div>
         </div>
     </nav>
@@ -36,11 +36,5 @@
                 isOpen: false
             }
         },
-        props : {
-            cv_link : {
-                required : false,
-                type : String
-            }
-        }
     }
 </script>

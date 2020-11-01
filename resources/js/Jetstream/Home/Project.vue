@@ -7,7 +7,7 @@
             <h1 class="text-white font-baloo text-3xl md:text-4xl font-medium leading-8 tracking-wide my-4">{{ project.name }}</h1>
             <p class="bg-black rounded shadow-lg text-thin text-md leading-relaxed tracking-wide text-gray-300 max-w-md px-6 py-6">{{ project.description }}</p>
             <div class="mt-3">
-                <span class="text-sm font-normal leading-4 text-gray-200 px-2 py-1 mr-2 mt-2">Laravel</span>
+                <span class="text-sm font-normal leading-4 text-gray-200 px-2 py-1 mr-2 mt-2" v-for="stack in project.stacks">{{ stack.name }}</span>
             </div>
         </div>
         <div class="my-2 text-left">

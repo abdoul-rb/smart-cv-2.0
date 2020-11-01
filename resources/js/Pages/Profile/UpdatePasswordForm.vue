@@ -1,7 +1,7 @@
 <template>
     <jet-form-section @submitted="updatePassword">
         <template #title>
-            Update Password
+            <h2 class="font-semibold text-xl text-gray-200 leading-tight">Update Password</h2>
         </template>
 
         <template #description>
