@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController')->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(function () {
-    Route::get('/', 'App\Http\Controllers\Dashboard\DashboardController')->name('dashboard');
+    Route::get('/admin/me', 'App\Http\Controllers\Dashboard\DashboardController')->name('dashboard');
 
     Route::prefix('skills')->name('dashboard.skill.')->group(function () {
         Route::get('', 'App\Http\Controllers\Dashboard\SkillController@index')->name('index');

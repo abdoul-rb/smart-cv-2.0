@@ -3987,15 +3987,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -4041,7 +4032,7 @@ __webpack_require__.r(__webpack_exports__);
       }],
       links: [],
       poste: 'Développeur web Fullstack Laravel/JS.',
-      aboutme: 'Autodidacte, passionné d\'entrepreneuriat ^-^ et de nouvelles technologies notamment de développement web, je travaille en agile pour contruire des applications web dynamiques et performantes.'
+      aboutme: 'Autodidacte, passionné d\'entrepreneuriat 😉 et de nouvelles technologies notamment de développement web, je travaille en agile pour contruire des applications web dynamiques et performantes.'
     };
   }
 });
@@ -29429,7 +29420,7 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "py-2" }, [
+              _c("div", {}, [
                 _vm._m(3),
                 _vm._v(" "),
                 _c(
@@ -29444,23 +29435,8 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "py-2" }, [
+              _c("div", {}, [
                 _vm._m(4),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "font-medium text-lg text-gray-200 mb-3" },
-                  _vm._l(_vm.skills, function(item) {
-                    return item.category == "Tools"
-                      ? _c("span", [_vm._v(_vm._s(" - " + item.name))])
-                      : _vm._e()
-                  }),
-                  0
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "py-2" }, [
-                _vm._m(5),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -29788,7 +29764,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(6)
+            _vm._m(5)
           ]
         ),
         _vm._v(" "),
@@ -29958,25 +29934,6 @@ var staticRenderFns = [
             "block text-2xl font-medium text-teal-400 tracking-wider transform -translate-x-6"
         },
         [_vm._v("Outils")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "inline-flex items-center mb-0" }, [
-      _c("span", { staticClass: "block text-5xl text-gray-800 opacity-50" }, [
-        _vm._v("05.")
-      ]),
-      _vm._v(" "),
-      _c(
-        "span",
-        {
-          staticClass:
-            "block text-2xl font-medium text-teal-400 tracking-wider transform -translate-x-6"
-        },
-        [_vm._v("Bonnes pratiques")]
       )
     ])
   },

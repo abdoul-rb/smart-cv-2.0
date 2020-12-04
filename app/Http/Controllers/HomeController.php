@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
+        #dd(phpinfo());
         $skills = Skill::all();
         $achieves = Achieve::with('stacks')->get();
         return Inertia::render('Home', compact('skills', 'achieves'));

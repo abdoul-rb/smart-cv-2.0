@@ -54,7 +54,7 @@
                             <span v-for="item in skills" v-if="item.category == 'Backend'">{{ ' - ' + item.name }}</span>
                         </div>
                     </div>
-                    <div class="py-2">
+                    <div class="">
                         <h2 class="inline-flex items-center mb-0">
                             <span class="block text-5xl text-gray-800 opacity-50">03.</span>
                             <span class="block text-2xl font-medium text-teal-400 tracking-wider transform -translate-x-6">Devops</span>
@@ -63,19 +63,10 @@
                             <span v-for="item in skills" v-if="item.category == 'Devops'">{{ ' - ' + item.name }}</span>
                         </div>
                     </div>
-                    <div class="py-2">
+                    <div class="">
                         <h2 class="inline-flex items-center mb-0">
                             <span class="block text-5xl text-gray-800 opacity-50">04.</span>
                             <span class="block text-2xl font-medium text-teal-400 tracking-wider transform -translate-x-6">Outils</span>
-                        </h2>
-                        <div class="font-medium text-lg text-gray-200 mb-3">
-                            <span v-for="item in skills" v-if="item.category == 'Tools'">{{ ' - ' + item.name }}</span>
-                        </div>
-                    </div>
-                    <div class="py-2">
-                        <h2 class="inline-flex items-center mb-0">
-                            <span class="block text-5xl text-gray-800 opacity-50">05.</span>
-                            <span class="block text-2xl font-medium text-teal-400 tracking-wider transform -translate-x-6">Bonnes pratiques</span>
                         </h2>
                         <div class="font-medium text-lg text-gray-200 mb-3">
                             <span v-for="item in skills" v-if="item.category == 'Tools'">{{ ' - ' + item.name }}</span>
@@ -173,7 +164,7 @@
                 ],
                 links : [],
                 poste : 'Développeur web Fullstack Laravel/JS.',
-                aboutme : 'Autodidacte, passionné d\'entrepreneuriat ^-^ et de nouvelles technologies notamment de développement web, je travaille en agile pour contruire des applications web dynamiques et performantes.',
+                aboutme : 'Autodidacte, passionné d\'entrepreneuriat 😉 et de nouvelles technologies notamment de développement web, je travaille en agile pour contruire des applications web dynamiques et performantes.',
             }
         },
     }
