@@ -1,7 +1,7 @@
 <template>
     <main class="root font-rubik overflow-x-hidden">
         <the-nav class="" />
-        <header class="relative flex min-h-screen px-4 lg:px-24 py-0 md:py-10"  id="about">
+        <header class="relative flex min-h-screen px-4 lg:px-24 py-0 md:py-10" id="about">
             <div class="w-full lg:w-11/12 my-8">
                 <p class="text-lg text-teal-400 font-medium tracking-widest">Hello, je m'appelle</p>
                 <p class="font-baloo text-3xl md:text-4xl lg:text-6xl text-gray-200 font-semibold tracking-wider">Abdoul Rahim Bah.</p>
